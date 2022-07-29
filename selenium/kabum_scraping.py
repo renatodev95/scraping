@@ -21,11 +21,11 @@ navegador.maximize_window()
 
 sleep(3)
 inputLogin = navegador.find_element(By.ID, 'inputUsuarioLogin')
-inputLogin.send_keys('{login}')
+inputLogin.send_keys('---login---')
 
 sleep(1)
 inputSenha = navegador.find_element(By.ID, 'inputSenhaLogin')
-inputSenha.send_keys('{senha}')
+inputSenha.send_keys('---senha---')
 
 sleep(1)
 botaoLogin = navegador.find_element(By.ID, 'botaoLogin')
@@ -51,4 +51,4 @@ for produto in produtos:
     lista_produtos.append([spans[0].text, float(spans[1].text.replace('R$ ', '')), 'https://www.kabum.com.br' + link['href']])
 
 data_frame = pd.DataFrame(lista_produtos, columns=['Nome', 'Preço', 'Link'])
-data_frame.to_excel('kabum.xlsx', index=False)
+data_frame.to_csv('kabum.csv', index=False)
